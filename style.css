@@ -132,10 +132,6 @@ h4, h5, h6 {
 }
 
 
-
-
-
-/* Header styling for CV */
 header h1 {
   font-size: 400%;
   color: var(--color-accent);
@@ -156,7 +152,7 @@ header a:hover {
   text-decoration: underline;
 }
 
-/* Styling for the sections in the CV */
+
 section {
   margin-bottom: 2em;
   padding-bottom: 1em;
@@ -169,7 +165,6 @@ section h2 {
   margin-bottom: 0.5em;
 }
 
-/* Styling for list items under experience and skills */
 ul {
   padding-left: 1.5em;
   list-style-type: disc;
@@ -179,7 +174,6 @@ ul li {
   margin-bottom: 0.5em;
 }
 
-/* Styling for the footer */
 footer {
   text-align: center;
   margin-top: 2em;
