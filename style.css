@@ -52,9 +52,10 @@ nav a.current {
 nav a:hover {
   border-bottom-width: 0.4em;
   border-bottom-color: var(--color-accent);
-  /* background-color: oklch(95% 5% 250) */
-  background-color: oklch(30% 5% 250);
+  /* background-color: oklch(95% 5% 250); */
+  /* background-color: oklch(30% 5% 250); */
   /* background-color: color-mix(in oklch, var(--color-accent), canvas 70%); */
+  background-color: oklch(50% 50% 270 / 50%);
 }
 
 input,
@@ -185,3 +186,13 @@ footer {
   font-size: 0.9em;
   color: oklch(40% 5% 220);
 }
+
+/* Step 4.3: Placing the switcher at the top right corner */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
+}
+
