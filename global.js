@@ -55,4 +55,3 @@ let pages = [
     // Add the link to <nav>
     nav.append(a);
   }
-  

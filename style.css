@@ -1,5 +1,6 @@
 :root {
-  --color-accent: oklch(50% 40% 270); /* Customize this value as desired */
+  --color-accent: oklch(50% 40% 270);
+  color-scheme: light dark;
 }
 
 html {
@@ -15,12 +16,14 @@ body {
 }
 
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   margin-bottom: 0.5em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
-  transition: background-color 0.3s, border-bottom-color 0.3s;
+  /* border-bottom-color: oklch(80% 3% 200); */
+  border-bottom-color: var(--border-color);
+  transition: background-color 0.3s, border-bottom-color 0.3s; 
 }
 
 nav ul {
@@ -49,7 +52,9 @@ nav a.current {
 nav a:hover {
   border-bottom-width: 0.4em;
   border-bottom-color: var(--color-accent);
-  background-color: oklch(95% 5% 250)
+  /* background-color: oklch(95% 5% 250) */
+  background-color: oklch(30% 5% 250);
+  /* background-color: color-mix(in oklch, var(--color-accent), canvas 70%); */
 }
 
 input,
