@@ -1,25 +1,22 @@
 console.log('IT’S ALIVE!');
 
-function $$(selector, context = document) {
-  return Array.from(context.querySelectorAll(selector));
-}
-
-// Step 3.1: Define pages for the navigation menu
+// Step 1: Define pages for the navigation menu
 let pages = [
-  { url: 'index.html', title: 'Home' },
-  { url: 'projects/index.html', title: 'Projects' },
-  { url: 'contact/index.html', title: 'Contact' },
-  { url: 'cv/index.html', title: 'Resume' },
-  { url: 'https://github.com/danielbirman28', title: 'GitHub' },
+  { url: '', title: 'Home' },
+  { url: 'projects/', title: 'Projects' },
+  { url: 'contact/', title: 'Contact' },
+  { url: 'cv/', title: 'Resume' },
+  { url: 'https://github.com/danielbirman28', title: 'GitHub' }
 ];
 
+// Step 2: Detect if we are on the home page
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
-// Create <nav> element and prepend to <body>
+// Step 3: Create the <nav> element and add it at the start of the body
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
-// Iterate over pages to create links
+// Step 4: Iterate over pages and create links
 for (let p of pages) {
   let url = p.url;
   let title = p.title;
@@ -32,7 +29,7 @@ for (let p of pages) {
   a.href = url;
   a.textContent = title;
 
-  // Highlight current page
+  // Highlight current page by comparing URL
   a.classList.toggle(
     'current',
     a.host === location.host && a.pathname === location.pathname
