@@ -6,11 +6,11 @@ function $$(selector, context = document) {
 
 // Step 3.1: Define pages for the navigation menu
 let pages = [
-  { url: 'portfolio/index.html', title: 'Home' },
-  { url: 'portfolio/projects/index.html', title: 'Projects' },
-  { url: 'portfolio/contact/index.html', title: 'Contact' },
-  { url: 'portfolio/cv/index.html', title: 'Resume' },
-  { url: 'portfolio/https://github.com/danielbirman28', title: 'GitHub' },
+  { url: 'index.html', title: 'Home' },
+  { url: 'projects/index.html', title: 'Projects' },
+  { url: 'contact/index.html', title: 'Contact' },
+  { url: 'cv/index.html', title: 'Resume' },
+  { url: 'https://github.com/danielbirman28', title: 'GitHub' },
 ];
 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
@@ -79,6 +79,7 @@ const savedTheme = localStorage.getItem('colorScheme') || 'auto';
 themeSelector.value = savedTheme;
 setColorScheme(savedTheme);
 
+// Listen for changes in the select dropdown to update theme
 themeSelector.addEventListener('change', (event) => {
   const selectedTheme = event.target.value;
   setColorScheme(selectedTheme);
