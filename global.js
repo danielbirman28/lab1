@@ -6,10 +6,10 @@ function $$(selector, context = document) {
 
 // Step 3.1: Define pages for the navigation menu
 let pages = [
-  { url: 'main/index.html', title: 'Home' },
-  { url: 'main/projects/index.html', title: 'Projects' },
-  { url: 'main/contact/index.html', title: 'Contact' },
-  { url: 'main/cv/index.html', title: 'Resume' },
+  { url: 'index.html', title: 'Home' },
+  { url: 'projects/index.html', title: 'Projects' },
+  { url: 'contact/index.html', title: 'Contact' },
+  { url: 'cv/index.html', title: 'Resume' },
   { url: 'https://github.com/danielbirman28', title: 'GitHub' },
 ];
 
