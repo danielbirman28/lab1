@@ -79,7 +79,6 @@ const savedTheme = localStorage.getItem('colorScheme') || 'auto';
 themeSelector.value = savedTheme;
 setColorScheme(savedTheme);
 
-// Listen for changes in the select dropdown to update theme
 themeSelector.addEventListener('change', (event) => {
   const selectedTheme = event.target.value;
   setColorScheme(selectedTheme);
