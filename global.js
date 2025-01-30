@@ -103,22 +103,29 @@ export async function fetchJSON(url) {
 }
 
 // Step 1.3: Creating a renderProjects Function
-export function renderProjects(project, containerElement, headingLevel = 'h2') {
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  // Check if the container element is valid
   if (!containerElement || !(containerElement instanceof HTMLElement)) {
-      console.error("Invalid container element.");
-      return;
+    console.error("Invalid container element.");
+    return;
   }
-  containerElement.innerHTML = '';
 
-  for (let i = 0; i < project.length; i++) {
-    const article = document.createElement('article');
-    
-    article.innerHTML = `
-      <h3>${project[i].title}</h3>
-      <img src="${project[i].image}" alt="${project.title}">
-      <p>${project[i].description}</p>
-    `;
-  
-    containerElement.appendChild(article);
+  // Select the projects-title element to update the project count
+  const titleElement = document.querySelector('.projects-title');
+
+  // Ensure the titleElement exists before updating it
+  if (titleElement) {
+    titleElement.innerHTML = `${projects.length} Projects`;
   }
+
+  // Create and append project articles
+  projects.forEach(project => {
+    const article = document.createElement('article');
+    article.innerHTML = `
+      <h3>${project.title}</h3>
+      <img src="${project.image}" alt="${project.title}">
+      <p>${project.description}</p>
+    `;
+    containerElement.appendChild(article);  // Append each project to the container
+  });
 }
