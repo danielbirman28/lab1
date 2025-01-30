@@ -83,3 +83,44 @@ themeSelector.addEventListener('change', (event) => {
   const selectedTheme = event.target.value;
   setColorScheme(selectedTheme);
 });
+
+// Step 1.2 Importing Project Data into the Projects Page
+
+export async function fetchJSON(url) {
+  try {
+      // Fetch the JSON file from the given URL
+      const response = await fetch(url);
+      if (!response.ok) {
+          throw new Error(`Failed to fetch projects: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return data; // Return the parsed JSON data
+      
+
+  } catch (error) {
+      // Handle any errors that occurred during the fetch process
+      console.error('Error fetching or parsing JSON data:', error);
+  }
+}
+
+// Step 1.3: Creating a renderProjects Function
+
+export function renderProjects(project, containerElement, headingLevel = 'h2') {
+  if (!containerElement || !(containerElement instanceof HTMLElement)) {
+      console.error("Invalid container element.");
+      return;
+  }
+  
+  containerElement.innerHTML = '';
+  
+  const article = document.createElement('article');
+  
+  article.innerHTML = `
+    <h3>${project.title}</h3>
+    <img src="${project.image}" alt="${project.title}">
+    <p>${project.description}</p>
+  `;
+  
+  containerElement.appendChild(article);
+}
