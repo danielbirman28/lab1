@@ -10,3 +10,6 @@ const projectsContainer = document.querySelector('.projects');
 
 // Step 2.1.5
 renderProjects(latestProjects, projectsContainer, 'h2');
+
+// Step 3.2.3
+const githubData = await fetchGitHubData('giorgianicolaou');
