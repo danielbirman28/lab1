@@ -1,61 +1,73 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
+        "title": "Personal Portfolio",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quisquam! Suscipit vero nemo dicta ipsam? Cupiditate adipisci illo, voluptates temporibus deserunt ipsa repellat nam? Nostrum quod natus tenetur enim eius."
+        "description": "Check it out here! https://daniel-birman-portfolio.netlify.app/"
     },
     {
-        "title": "Beatae nostrum quod ut.",
+        "title": "Food Recipes Project",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Delectus explicabo necessitatibus perspiciatis, quaerat nulla adipisci quasi. Dicta quidem, delectus, quod quo nulla laborum praesentium inventore nesciunt tenetur voluptatem dolores fuga optio iusto in nobis adipisci maiores nam eligendi."
+        "description": "This is a data science project for DSC80 at UCSD focusing on exploring the relationship between healthy vs non healthy recipes, and how many steps each recipe contains."
     },
     {
-        "title": "Fugiat deleniti laboriosam alias!",
+        "title": "This Website",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Quos, suscipit natus quasi, architecto quaerat dolore ut aperiam reprehenderit quisquam possimus voluptatum adipisci harum. Suscipit quo tenetur quibusdam ipsum ipsam. Neque totam magni tempore saepe culpa nisi maxime a."
     },
     {
-        "title": "Modi cumque dicta dolorum.",
+        "title": "NBA Machine Learning Model",
+        "year":"2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Laboriosam recusandae expedita, tempora molestiae dolores alias eaque! Laudantium voluptatum delectus similique, iste distinctio reprehenderit voluptas adipisci numquam alias consectetur, mollitia natus accusamus porro ipsa nisi? Ratione amet aperiam molestias."
+        "description": "I worked to build a model to predict a player's career outcome based on information up through the first four years of his career."
     },
     {
-        "title": "Cumque eaque iste ex!",
+        "title": "NBA Stats Analysis Project",
+        "year":"2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Obcaecati consequuntur, rem repellendus tempore officia molestias quas minus harum perspiciatis recusandae, quos voluptatum animi. Odit dolore at, nobis dolorem aut reprehenderit nihil, accusamus harum non exercitationem ipsa molestias odio!"
     },
     {
         "title": "Nesciunt, ut itaque. Fugit.",
+        "year":"2022",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Harum neque eaque facere sunt, ex quod autem officiis, ipsum possimus hic minima alias quas aliquam et, ullam numquam! Vero atque a cupiditate, nisi rerum vel sed eaque labore ratione?"
     },
     {
         "title": "Culpa quidem error minima?",
+        "year":"2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Veritatis odio cum laudantium ea error, delectus incidunt, beatae corporis architecto eveniet, reiciendis molestias possimus doloribus ex temporibus nobis amet id voluptatum explicabo illum eius iste! Itaque ipsum repudiandae sapiente."
     },
     {
         "title": "Veritatis ad sit maxime.",
+        "year":"2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Delectus adipisci ex at voluptatum inventore alias incidunt totam veniam modi. Architecto ipsam esse voluptatibus unde suscipit labore assumenda corporis autem explicabo incidunt vel, deserunt dolorem doloremque neque officia vero?"
     },
     {
         "title": "Deleniti nisi vel doloremque?",
+        "year":"2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Nesciunt a inventore distinctio accusantium perspiciatis atque, quasi commodi aspernatur aliquid molestias. Ea, omnis vitae veritatis quaerat consequuntur quae iusto iure perferendis officia? Corporis sapiente deserunt natus soluta quas quod."
     },
     {
         "title": "Quos temporibus amet quam.",
+        "year":"2022",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Reiciendis nemo modi reprehenderit, itaque impedit, illum fugiat optio sed odit ipsum nostrum doloribus cupiditate accusantium? Modi distinctio nihil voluptatem sunt ex nemo quos nobis temporibus molestiae deserunt, officia reiciendis."
     },
     {
         "title": "Voluptas recusandae quia possimus!",
+        "year":"2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Quae doloremque vero quia voluptas quidem. Id adipisci nemo sit corporis quis explicabo officia temporibus, aperiam recusandae architecto placeat nihil labore aspernatur ullam officiis vero ab soluta, nam ipsum eius."
     },
     {
         "title": "Excepturi pariatur culpa veritatis?",
+        "year":"2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Ad laudantium ducimus facere, hic, laborum corrupti rerum porro soluta earum quibusdam quam illo, iusto necessitatibus eveniet repellat cum. Corrupti incidunt illum itaque dicta soluta debitis autem ratione cumque nostrum!"
     }
