@@ -103,32 +103,72 @@ export async function fetchJSON(url) {
 }
 
 // Step 1.3: Creating a renderProjects Function
+// export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+//   if (!containerElement || !(containerElement instanceof HTMLElement)) {
+//     console.error("Invalid container element.");
+//     return;
+//   }
+
+//   const titleElement = document.querySelector('.projects-title');
+//   if (titleElement) {
+//     titleElement.innerHTML = `${projects.length} Projects`;
+//   }
+
+//   projects.forEach(project => {
+//     const article = document.createElement('article');
+
+//     // Create a container for description and year
+//     const detailsDiv = document.createElement('div');
+//     detailsDiv.innerHTML = `
+//       <p>${project.description}</p>
+//       <p class="project-year">${project.year}</p>
+//     `;
+
+//     article.innerHTML = `
+//       <h3>${project.title}</h3>
+//       <img src="${project.image}" alt="${project.title}">
+//     `;
+
+//     article.appendChild(detailsDiv); // Append details below the image
+//     containerElement.appendChild(article);
+//   });
+// }
+
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
-  // Check if the container element is valid
   if (!containerElement || !(containerElement instanceof HTMLElement)) {
     console.error("Invalid container element.");
     return;
   }
 
-  // Select the projects-title element to update the project count
-  const titleElement = document.querySelector('.projects-title');
+  // Clear the container before rendering new projects
+  containerElement.innerHTML = '';
 
-  // Ensure the titleElement exists before updating it
+  const titleElement = document.querySelector('.projects-title');
   if (titleElement) {
     titleElement.innerHTML = `${projects.length} Projects`;
   }
 
-  // Create and append project articles
   projects.forEach(project => {
     const article = document.createElement('article');
+
+    // Create a container for description and year
+    const detailsDiv = document.createElement('div');
+    detailsDiv.innerHTML = `
+      <p>${project.description}</p>
+      <p class="project-year">${project.year}</p>
+    `;
+
     article.innerHTML = `
       <h3>${project.title}</h3>
       <img src="${project.image}" alt="${project.title}">
-      <p>${project.description}</p>
     `;
-    containerElement.appendChild(article);  // Append each project to the container
+
+    article.appendChild(detailsDiv); // Append details below the image
+    containerElement.appendChild(article);
   });
 }
+
+
 
 // Step 3.2.1, 3.2.2
 export async function fetchGitHubData(username) {

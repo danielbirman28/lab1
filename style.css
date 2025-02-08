@@ -195,3 +195,96 @@ footer {
   font-size: 80%;
   font-family: inherit;
 }
+
+/* Pie Chart Style */
+.project-year {
+  font-family: Baskerville, serif;
+  font-variant-numeric: oldstyle-nums;
+  font-size: 1rem;
+  color: #888888;
+  margin-top: 0.5em;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+/* Styling for the container holding pie chart and legend */
+.container {
+  display: flex;
+  justify-content: space-between;  /* Align pie chart and legend horizontally */
+  align-items: center;  /* Align them at the top */
+  gap: 2rem;  /* Add space between pie chart and legend */
+}
+
+/* Styling for the legend */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));  /* Grid layout for legend items */
+  gap: 10px;  /* Space between items in the legend */
+  padding: 10px;
+  margin-top: 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  flex: 1;  /* Allow the legend to take up the remaining space */
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;  /* Space between the swatch and the label */
+}
+
+.legend .swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;  /* Make it round */
+  display: inline-block;
+}
+
+.legend li {
+  margin-bottom: 10px;
+}
+
+.legend span {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Styling for the search bar */
+.searchBar {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5em;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-sizing: border-box;  /* Ensure padding is included in the width */
+}
+
+.searchBar:focus {
+  outline: none;
+  border-color: #6b8e23;  /* Highlight border color on focus */
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--pink);
+  }
+}
