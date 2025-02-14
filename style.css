@@ -288,3 +288,75 @@ path {
     fill: var(--pink);
   }
 }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));  /* Grid layout for stats items */
+  gap: 15px;  /* Space between items */
+  padding: 15px;
+  margin-top: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  flex: 1;  /* Allow the stats to take up the remaining space */
+}
+
+.stats dt {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.stats dd {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;  /* Space between icon and label */
+}
+
+.stats li {
+  margin-bottom: 15px;
+}
+
+.stats .swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;  /* Make it round */
+  display: inline-block;
+  background-color: #3498db; /* Example color */
+}
+
+.stats span {
+  font-size: 14px;
+  color: #555;
+}
+
+.grid-morning {
+  stroke: #fabd8c;  /* Warm orange */
+  stroke-opacity: 2;
+  /* opacity: 0.5; */
+  stroke-width: 2;
+}
+
+.grid-afternoon {
+  stroke: #e76f51;  /* Deep orange */
+  stroke-opacity: 0.8;
+  stroke-width: 2;
+}
+
+.grid-evening {
+  stroke: #264653;  /* Dark teal */
+  stroke-opacity: 0.7;
+  stroke-width: 2;
+}
+
+.grid-night {
+  stroke: #1d3557;  /* Deep blue */
+  stroke-opacity: 0.6;
+  stroke-width: 2;
+}
