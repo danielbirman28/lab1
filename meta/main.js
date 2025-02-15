@@ -112,7 +112,8 @@ function createScatterplot() {
     const dots = svg.append('g').attr('class', 'dots');
     const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
     const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]); // adjust these values based on your experimentation
-    const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+    const sort1 = commits.filter((commit) => commit.id != 'fed6237f')
+    const sortedCommits = d3.sort(sort1, (d) => -d.totalLines);
 
     dots
     .selectAll('circle')
