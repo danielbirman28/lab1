@@ -336,31 +336,6 @@ path {
   color: #555;
 }
 
-.grid-morning {
-  stroke: #fabd8c;  /* Warm orange */
-  stroke-opacity: 2;
-  /* opacity: 0.5; */
-  stroke-width: 2;
-}
-
-.grid-afternoon {
-  stroke: #e76f51;  /* Deep orange */
-  stroke-opacity: 0.8;
-  stroke-width: 2;
-}
-
-.grid-evening {
-  stroke: #264653;  /* Dark teal */
-  stroke-opacity: 0.7;
-  stroke-width: 2;
-}
-
-.grid-night {
-  stroke: #1d3557;  /* Deep blue */
-  stroke-opacity: 0.6;
-  stroke-width: 2;
-}
-
 /* Info layout */
 dl.info {
   display: grid;
@@ -369,6 +344,14 @@ dl.info {
   margin: 0;
   transition-duration: 500ms;
   transition-property: opacity, visibility;
+
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  max-width: 250px;
 }
 
 dl.info[hidden]:not(:hover, :focus-within) {

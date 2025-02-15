@@ -24,7 +24,7 @@ function processCommits() {
 
             let ret = {
                 id: commit,
-                url: 'https://github.com/vis-society/lab-7/commit/' + commit,
+                url: 'https://github.com/danielbirman28/lab1/commit/' + commit,
                 author,
                 date,
                 time,
@@ -112,17 +112,32 @@ function createScatterplot() {
     .nice();
 
     const yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
-
     const dots = svg.append('g').attr('class', 'dots');
+    const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
+    const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]); // adjust these values based on your experimentation
+    const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
 
     dots
     .selectAll('circle')
-    .data(commits)
+    .data(sortedCommits)
     .join('circle')
     .attr('cx', (d) => xScale(d.datetime))
     .attr('cy', (d) => yScale(d.hourFrac))
-    .attr('r', 5)
-    .attr('fill', 'steelblue');
+    .attr('r', (d) => rScale(d.totalLines))
+    .attr('fill', 'steelblue')
+    .style('fill-opacity', 0.7) // Add transparency for overlapping dots
+    .on('mouseenter', function (event, d) {
+        d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
+        updateTooltipContent(d);
+        updateTooltipVisibility(true);
+        updateTooltipPosition(event);
+    })
+    .on('mouseleave', function () {
+        d3.select(event.currentTarget).style('fill-opacity', 0.7); // Restore transparency
+        updateTooltipContent({});
+        updateTooltipVisibility(false);
+    });
+
 
     const margin = { top: 10, right: 10, bottom: 30, left: 20 };
 
@@ -149,15 +164,24 @@ function createScatterplot() {
     gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 
     // Create the axes
-    const xAxis = d3.axisBottom(xScale);
+    const xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat('%d/%m/%y'));
     // const yAxis = d3.axisLeft(yScale);
     const yAxis = d3.axisLeft(yScale).tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
 
     // Add X axis
-    svg
+    const xAxisGroup = svg
     .append('g')
     .attr('transform', `translate(0, ${usableArea.bottom})`)
     .call(xAxis);
+
+    // Rotate x-axis labels for better readability
+    xAxisGroup
+    .selectAll('text')
+    .attr('text-anchor', 'end')  // Align text to the end
+    .attr('transform', 'rotate(-45)')  // Rotate labels
+    .attr('dy', '0.5em')  // Adjust vertical spacing
+    .attr('dx', '-0.5em')  // Adjust horizontal spacing
+    .attr('font-size','10px');
 
     // Add Y axis
     svg
@@ -190,6 +214,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 function updateTooltipContent(commit) {
     const link = document.getElementById('commit-link');
     const date = document.getElementById('commit-date');
+    const time = document.getElementById('commit-time');
+    const author = document.getElementById('commit-author');
+    const lines = document.getElementById('commit-lines');
   
     if (Object.keys(commit).length === 0) return;
   
@@ -198,7 +225,15 @@ function updateTooltipContent(commit) {
     date.textContent = commit.datetime?.toLocaleString('en', {
       dateStyle: 'full',
     });
+    time.textContent = commit.datetime?.toLocaleTimeString('en', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    });
+    author.textContent = commit.author;
+    lines.textContent = commit.totalLines;
 }
+
 
 function updateTooltipVisibility(isVisible) {
     const tooltip = document.getElementById('commit-tooltip');
