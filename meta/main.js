@@ -109,10 +109,11 @@ function createScatterplot() {
     xScale = d3.scaleTime().domain(d3.extent(commits, (d) => d.datetime)).range([0, width]).nice();
     yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
 
-    const dots = svg.append('g').attr('class', 'dots');
-    const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
-    const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]); // adjust these values based on your experimentation
     const sort1 = commits.filter((commit) => commit.id != 'fed6237f')
+    const dots = svg.append('g').attr('class', 'dots');
+    const [minLines, maxLines] = d3.extent(sort1, (d) => d.totalLines);
+    const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]); // adjust these values based on your experimentation
+    
     const sortedCommits = d3.sort(sort1, (d) => -d.totalLines);
 
     dots
