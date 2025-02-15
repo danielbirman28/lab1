@@ -163,7 +163,7 @@ function createScatterplot() {
     gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 
     // Create the axes
-    const xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat('%d/%m/%y'));
+    const xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat('%m/%d/%y'));
     // const yAxis = d3.axisLeft(yScale);
     const yAxis = d3.axisLeft(yScale).tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
 
