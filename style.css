@@ -395,3 +395,10 @@ circle.selected {
   fill: #ff6b6b;
 }
 
+.projects img {
+  width: 100%; /* Ensures the image fills the available width */
+  height: 102%;
+  max-width: 300px; /* You can set this to match the other boxes' dimensions */
+  display: block; /* Prevents extra spacing below the image */
+  margin: 0 auto; /* Centers the image horizontally */
+}

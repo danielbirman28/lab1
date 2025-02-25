@@ -30,11 +30,12 @@
         "description": "Obcaecati consequuntur, rem repellendus tempore officia molestias quas minus harum perspiciatis recusandae, quos voluptatum animi. Odit dolore at, nobis dolorem aut reprehenderit nihil, accusamus harum non exercitationem ipsa molestias odio!"
     },
     {
-        "title": "Nesciunt, ut itaque. Fugit.",
-        "year":"2022",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Harum neque eaque facere sunt, ex quod autem officiis, ipsum possimus hic minima alias quas aliquam et, ullam numquam! Vero atque a cupiditate, nisi rerum vel sed eaque labore ratione?"
-    },
+        "title": "Bikewatching: Traffic Flow for Bike Rentals in Boston",
+        "year": "2025",
+        "image": "/images/bikewatch.png",
+        "description": "<a href='https://danielbirman28.github.io/bikewatching/' target='_blank'>Click here to visit the website</a>",
+        "url": "https://danielbirman28.github.io/bikewatching/"
+    },      
     {
         "title": "Culpa quidem error minima?",
         "year":"2024",
