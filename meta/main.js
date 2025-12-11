@@ -285,9 +285,7 @@ function updateSelection() {
 }
 
 function updateSelectionCount() {
-    const selectedCommits = brushSelection
-      ? commits.filter(isCommitSelected)
-      : [];
+    const selectedCommits = brushSelection ? commits.filter(isCommitSelected) : [];
   
     const countElement = document.getElementById('selection-count');
     countElement.textContent = `${
